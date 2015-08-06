@@ -32,7 +32,7 @@
 *  Git
 *  stlink command line tools
 *  OpenOCD 0.9.0 2015-05-19 Release
-*  GNU ARM Tools 2015-Q1 Release
+*  GNU ARM Tools 2015-Q2 Release
 *  Firefox web browser
 *  KiCAD EDA Software Suite
 
