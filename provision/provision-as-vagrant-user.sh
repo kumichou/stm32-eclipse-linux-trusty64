@@ -43,14 +43,14 @@ if ! [[ -d ~/.ssh ]]; then
 fi
 
 echo -e "\n**** Grabbing the GCC ARM Embedded Toolkit for GCC 4.7.2 ****\n"
-curl -sLo ~/gcc-arm-none-eabi-4_9-2015q1-20150306-linux.tar.bz2 https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q1-update/+download/gcc-arm-none-eabi-4_9-2015q1-20150306-linux.tar.bz2 >/dev/null
+curl -sLo ~/gcc-arm-none-eabi-4_9-2015q2-20150609-linux.tar.bz2 https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/gcc-arm-none-eabi-4_9-2015q2-20150609-linux.tar.bz2 >/dev/null
 
-if [[ -f ~/gcc-arm-none-eabi-4_9-2015q1-20150306-linux.tar.bz2 ]]; then
-    echo -e "\n******  gcc-arm-none-eabi-4_9-2015q1-20150306-linux.tar.bz2 has been downloaded  ******\n"
+if [[ -f ~/gcc-arm-none-eabi-4_9-2015q2-20150609-linux.tar.bz2 ]]; then
+    echo -e "\n******  gcc-arm-none-eabi-4_9-2015q2-20150609-linux.tar.bz2 has been downloaded  ******\n"
 fi
 
-tar xjf ~/gcc-arm-none-eabi-4_9-2015q1-20150306-linux.tar.bz2 -C ~/
-rm ~/gcc-arm-none-eabi-4_9-2015q1-20150306-linux.tar.bz2
+tar xjf ~/gcc-arm-none-eabi-4_9-2015q2-20150609-linux.tar.bz2 -C ~/
+rm ~/gcc-arm-none-eabi-4_9-2015q2-20150609-linux.tar.bz2
 
 echo -e "\n**** Done downlading GCC ARM Embedded Toolkit ****\n"
 
