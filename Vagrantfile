@@ -19,6 +19,11 @@ if ARGV[0] == "up" then
     has_installed_plugins = true
   end
 
+  unless Vagrant.has_plugin?("copy_my_conf")
+    system("vagrant plugin install copy_my_conf")
+    has_installed_plugins = true
+  end
+
   if has_installed_plugins then
     puts "Vagrant plugins were installed. Please run vagrant up again to install the VM"
     exit
@@ -163,19 +168,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   #
-  # copy-ssh-key.sh
+  # Copy SSH configuration, Global Git config & Vim configuration to the VM
   #
   # If you are running on Mac OSX or Linux as a Host OS, then copy your SSH key if you have one.
   # If you don't, or are on Windows, the provisioning that has already ran has generated a new one for you to use with GitHub.
   #
 
   if [:macosx, :linux, :unix].include? OsDetector.os
-    if File.exist?(File.expand_path('~/.ssh/id_rsa')) then
-      `cp ~/.ssh/id_rsa id_rsa`
-      `cp ~/.ssh/id_rsa.pub id_rsa.pub`
-    end
+    # Assumes you have Git, Vim & OpenSSH installed on your *nix system already.
 
-    config.vm.provision :shell, path: File.join( "provision", "copy-ssh-key.sh" )
+    config.vm.provision :copy_my_conf do |copy_conf|
+      copy_conf.git
+      copy_conf.vim
+      copy_conf.ssh
+    end
   end
 
   #
