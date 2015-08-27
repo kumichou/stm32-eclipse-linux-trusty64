@@ -51,9 +51,21 @@ If you encounter other problems, check out the [Gotchas](#gotchas) section below
 
 ## Gotchas
 
+### Space in Home Directory Name
+
 If you are using Windows and receive an error that the Vagrant Home Directory can't have spaces in it due to a bug in Ruby, your User home directory probably has a space in it.
 
 * Create a folder "home" within C:\Hashicorp\Vagrant - `C:\Hashicorp\Vagrant\home`
 * Add the environment variable `VAGRANT_HOME` to Windows, see [http://www.computerhope.com/issues/ch000549.htm](http://www.computerhope.com/issues/ch000549.htm) if you don't know how.
 * Reboot your system for the new environment variable to take effect.
 * Try again...
+
+### Confirm VT-x or AMD-V CPU Extension Support
+
+Check your CPU on the Intel website to see if it supports VT-x. If you have an AMD processor, confirm that it supports AMD-V extensions. Then, make sure to turn on Virtualization support in your BIOS. Apple computers that have a compatible Intel processor already have the VT-x extensions enabled in EFI.
+
+### Hyper-V interfering with VirtualBox
+
+If needed turn off Hyper-V (go to Windows Features on your machine and uncheck Hyper-v – in Win10 use the search box on the bottom toolbar to get to the Windows Features)
+
+
