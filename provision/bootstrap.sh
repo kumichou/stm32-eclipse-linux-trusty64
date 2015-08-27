@@ -64,8 +64,9 @@ apt-get -qq -y install libc6:i386 libncurses5:i386 libstdc++6:i386 >/dev/null
 
 # Prep for EABI ARM Toolchain install
 apt-get -qq -y install build-essential gdb manpages-dev curl flex bison libgmp3-dev libmpfr-dev texinfo libelf-dev autoconf libncurses5-dev libmpc-dev >/dev/null
-apt-get -qq -y install libftdi1 libtool subversion git-core automake texinfo libnet-telnet-perl gtkterm ntp >/dev/null
-apt-get -qq -y install libxslt-dev libxml2-dev git zip unzip zlib1g-dev libtool autoconf texinfo build-essential libftdi-dev libusb-1.0-0-dev pkg-config >/dev/null
+apt-get -qq -y install libftdi1 libtool automake texinfo libnet-telnet-perl gtkterm ntp >/dev/null
+apt-get -qq -y install libxslt-dev libxml2-dev zip unzip zlib1g-dev libtool autoconf texinfo build-essential libftdi-dev libusb-1.0-0-dev pkg-config >/dev/null
+apt-get -qq -y install git-core git subversion bzr mercurial >/dev/null
 
 # Eclipse & Eclipse CDT will be installed in the user's directory later
 
